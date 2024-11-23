@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Widget</title>
-</head>
-<body>
+<style>
+    #ctrader-plugin-root {
+        width: 100%;
+        height: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>
 
-    <!-- Your Widget Embed Section -->
-    <div id="widget-container">
-        <!-- Replace the URL below with the widget code or URL provided by the service you want to embed -->
-       <iframe src='https://ct.deriv.com/widget-multi?frame=d5dde1&frametext=000000e6&background=ffffff&grid=0000001f&symbolname=000000e6&spread=000000e6&pricerising=009345&pricefalling=f05824&priceneutral=b0bec5&staleprice=000000e6&feedlev=000000e6&feedam=000000e6&hl=000000e6&scroll=b0bec5&btbidask=000000e6&button=009345&buttontext=ffffff&w=250&h=250&fullwidth=0&fbshow=0&fbt=&fbu=&themetype=palette&palettename=light&s=&u=yohancehutchinson' style='border:0;height:250px;width:250px'/>
-    </div>
+<div id="ctrader-plugin-root"></div>
+<script id="init" type="text/javascript" defer src="https://app.ctrader.com/widget.js"></script>
 
-</body>
-</html>
+<script type="text/javascript">
+    const script = document.getElementById('init');
+
+    script.onload = () => {
+        putInitScript('runPlugin');
+        runPlugin('ctrader-plugin-root', {
+            "route": "/?lang=en&theme=light&u=letstrade747",
+            "appConfig": {
+                "chart": {
+                    "initialChartLayout": "Single"
+                }
+            }
+        });
+    };
+</script>
